@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Administrator Login</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #60a5fa, #3b82f6);
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-box {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      text-align: center;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>School Admin Login</h2>
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button onclick="validate()">Login</button>
+    <div id="errorMsg" class="error"></div>
+  </div>
+
+  <script>
+    function validate() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      // Example credentials
+      if (user === "admin" && pass === "school123") {
+        window.location.href = "index.html"; // Your actual site page
+      } else {
+        document.getElementById("errorMsg").innerText = "Invalid username or password!";
+      }
+    }
+  </script>
+</body>
+</html>
